@@ -19,7 +19,6 @@ var basename = _path["default"].basename(__filename);
 
 var env = process.env.NODE_ENV ? process.env.NODE_ENV : "development";
 var config = _database["default"][env];
-console.log(config);
 console.log("this is the environment: ", env);
 var db = {};
 var sequelize;
@@ -37,7 +36,6 @@ if (config.environment === "production") {
     logging: true
   });
 } else {
-  console.log('dsdsdsd');
   sequelize = new _sequelize["default"](config.database, config.username, config.password, config);
 }
 
