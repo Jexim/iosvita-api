@@ -63,17 +63,18 @@ function _list() {
   _list = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
   _regenerator["default"].mark(function _callee2(_ref) {
-    var limit, offset;
+    var limit, offset, filters;
     return _regenerator["default"].wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
-            limit = _ref.limit, offset = _ref.offset;
+            limit = _ref.limit, offset = _ref.offset, filters = _ref.filters;
             _context2.prev = 1;
             _context2.next = 4;
             return _models["default"].Product.findAndCountAll({
               offset: offset,
-              limit: limit
+              limit: limit,
+              where: filters
             });
 
           case 4:
@@ -141,7 +142,7 @@ function _parseFromDocs() {
 
                           case 10:
                             if (_iteratorNormalCompletion = (_step = _iterator.next()).done) {
-                              _context3.next = 25;
+                              _context3.next = 24;
                               break;
                             }
 
@@ -159,74 +160,74 @@ function _parseFromDocs() {
                               title: productRow.title,
                               price: +productRow.price,
                               description: productRow.description,
+                              image: productRow.image,
                               CategoryId: category ? category.id : undefined,
                               DkId: productRow.dk
                             };
-                            console.log(_models["default"].Product);
                             _context3.t0 = createdProducts;
-                            _context3.next = 20;
+                            _context3.next = 19;
                             return _models["default"].Product.create(newProduct);
 
-                          case 20:
+                          case 19:
                             _context3.t1 = _context3.sent;
 
                             _context3.t0.push.call(_context3.t0, _context3.t1);
 
-                          case 22:
+                          case 21:
                             _iteratorNormalCompletion = true;
                             _context3.next = 10;
                             break;
 
-                          case 25:
-                            _context3.next = 31;
+                          case 24:
+                            _context3.next = 30;
                             break;
 
-                          case 27:
-                            _context3.prev = 27;
+                          case 26:
+                            _context3.prev = 26;
                             _context3.t2 = _context3["catch"](8);
                             _didIteratorError = true;
                             _iteratorError = _context3.t2;
 
-                          case 31:
+                          case 30:
+                            _context3.prev = 30;
                             _context3.prev = 31;
-                            _context3.prev = 32;
 
                             if (!_iteratorNormalCompletion && _iterator["return"] != null) {
                               _iterator["return"]();
                             }
 
-                          case 34:
-                            _context3.prev = 34;
+                          case 33:
+                            _context3.prev = 33;
 
                             if (!_didIteratorError) {
-                              _context3.next = 37;
+                              _context3.next = 36;
                               break;
                             }
 
                             throw _iteratorError;
 
+                          case 36:
+                            return _context3.finish(33);
+
                           case 37:
-                            return _context3.finish(34);
+                            return _context3.finish(30);
 
                           case 38:
-                            return _context3.finish(31);
-
-                          case 39:
                             resolve(createdProducts);
-                            _context3.next = 45;
+                            _context3.next = 44;
                             break;
 
-                          case 42:
-                            _context3.prev = 42;
+                          case 41:
+                            _context3.prev = 41;
                             _context3.t3 = _context3["catch"](4);
                             reject(_context3.t3);
 
-                          case 45:
+                          case 44:
                           case "end":
                             return _context3.stop();
                         }
                       }
-                    }, _callee3, null, [[4, 42], [8, 27, 31, 39], [32,, 34, 38]]);
+                    }, _callee3, null, [[4, 41], [8, 26, 30, 38], [31,, 33, 37]]);
                   }));
 
                   return function (_x3, _x4) {

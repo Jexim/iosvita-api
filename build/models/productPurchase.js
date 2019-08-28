@@ -5,10 +5,7 @@ module.exports = function (sequelize, DataTypes) {
     count: DataTypes.INTEGER
   }, {});
 
-  ProductPurchase.associate = function (models) {
-    // associations can be defined here
-    ProductPurchase.hasOne(models["Product"]);
-    ProductPurchase.hasOne(models["Purchase"]);
+  ProductPurchase.associate = function (models) {// associations can be defined here
   };
 
   return ProductPurchase;

@@ -39,7 +39,7 @@ function _categoriesList() {
           case 4:
             _context.t1 = _context.sent;
             _context.t2 = res;
-            return _context.abrupt("return", _context.t0.setSuccess.call(_context.t0, 201, _context.t1).send(_context.t2));
+            return _context.abrupt("return", _context.t0.setSuccess.call(_context.t0, 200, _context.t1).send(_context.t2));
 
           case 9:
             _context.prev = 9;

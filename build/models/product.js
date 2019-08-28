@@ -13,7 +13,8 @@ module.exports = function (sequelize, DataTypes) {
     description: {
       allowNull: true,
       type: DataTypes.TEXT
-    }
+    },
+    image: DataTypes.STRING
   }, {});
 
   Product.associate = function (models) {

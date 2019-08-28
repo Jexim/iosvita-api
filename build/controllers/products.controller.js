@@ -28,37 +28,40 @@ function _productsList() {
   _productsList = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
   _regenerator["default"].mark(function _callee(req, res) {
-    var _req$body, limit, offset;
+    var _req$query, limit, offset, filters;
 
     return _regenerator["default"].wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             _context.prev = 0;
-            _req$body = req.body, limit = _req$body.limit, offset = _req$body.offset;
+            _req$query = req.query, limit = _req$query.limit, offset = _req$query.offset;
+            filters = JSON.parse(req.query.filters);
+            console.log(filters);
             _context.t0 = responseUtils;
-            _context.next = 5;
+            _context.next = 7;
             return ProductsService.list({
               limit: limit,
-              offset: offset
+              offset: offset,
+              filters: filters
             });
 
-          case 5:
+          case 7:
             _context.t1 = _context.sent;
             _context.t2 = res;
-            return _context.abrupt("return", _context.t0.setSuccess.call(_context.t0, 201, _context.t1).send(_context.t2));
+            return _context.abrupt("return", _context.t0.setSuccess.call(_context.t0, 200, _context.t1).send(_context.t2));
 
-          case 10:
-            _context.prev = 10;
+          case 12:
+            _context.prev = 12;
             _context.t3 = _context["catch"](0);
             return _context.abrupt("return", responseUtils.setError(400, _context.t3.message).send(res));
 
-          case 13:
+          case 15:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[0, 10]]);
+    }, _callee, null, [[0, 12]]);
   }));
   return _productsList.apply(this, arguments);
 }
