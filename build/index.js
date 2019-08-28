@@ -42,6 +42,7 @@ app.get("*", function (req, res) {
     message: "Welcome to this API."
   });
 });
+console.log(_models["default"].sequelize.config);
 
 _models["default"].sequelize.sync().then(function () {
   return app.listen(port, function () {
