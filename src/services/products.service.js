@@ -1,6 +1,6 @@
 import GoogleSpreadsheet from "google-spreadsheet";
 import database from "../models";
-import appConfig from "../config/app";
+import appConfig from "../../config/app";
 
 const doc = new GoogleSpreadsheet(appConfig[process.env.NODE_ENV || "development"].googleSheetId);
 
