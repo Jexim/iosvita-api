@@ -24,4 +24,5 @@ app.use("/purchases", purchasesRoutes);
 app.get("*", (req, res) => res.status(200).send({ message: "Welcome to this API." }));
 app.listen(port, () => console.log(`Server is running on PORT ${port}`));
 
+console.log(process.env.NODE_ENV);
 export default app;

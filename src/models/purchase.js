@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const Purchase = sequelize.define(
     "Purchase",
     {
-      title: DataTypes.STRING
+      comment: DataTypes.TEXT
     },
     {}
   );

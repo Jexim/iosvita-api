@@ -9,9 +9,8 @@ module.exports = {
           primaryKey: true,
           type: Sequelize.INTEGER
         },
-        title: {
-          type: Sequelize.STRING
-        },
+        title: Sequelize.STRING,
+        comment: Sequelize.TEXT,
         createdAt: {
           allowNull: false,
           type: Sequelize.DATE

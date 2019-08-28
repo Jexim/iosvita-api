@@ -18,7 +18,6 @@ export async function create(purchaseData) {
 
     for (const productRow of purchaseData.products) {
       readyPurchase.addProduct(productRow.id, { through: { count: productRow.count } });
-
     }
 
     return readyPurchase;

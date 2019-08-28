@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon --exec babel-node ./src/index.js",
+    "start": "export NODE_ENV=test && sequelize db:migrate && nodemon --exec babel-node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -32,6 +33,7 @@
     "@babel/runtime": "^7.5.5",
     "babel-loader": "^8.0.6",
     "babel-register": "^6.26.0",
+    "dotenv": "^8.1.0",
     "eslint": "^6.2.2"
   }
 }

@@ -20,7 +20,7 @@ export async function createProduct(req, res) {
   }
 
   if (!newProduct.price) {
-    return responseUtils.setError(400, "Price can not be empty");
+    return responseUtils.setError(400, "Price can not be empty").send(res);
   }
 
   try {

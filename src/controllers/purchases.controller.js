@@ -15,6 +15,12 @@ export async function purchasesList(req, res) {
 export async function createPurchase(req, res) {
   let newPurchase = req.body;
 
+  console.log(!newPurchase.products || !newPurchase.products.length);
+
+  if (!newPurchase.products || !newPurchase.products.length) {
+    return responseUtils.setError(400, "Purchase can not have products").send(res);
+  }
+
   try {
     const createdPurchase = await PurchasesService.create(newPurchase);
 
