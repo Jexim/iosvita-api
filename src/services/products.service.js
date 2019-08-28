@@ -12,9 +12,9 @@ export async function create(newProduct) {
   }
 }
 
-export async function list({ limit, offset }) {
+export async function list({ limit, offset, filters }) {
   try {
-    return await database.Product.findAndCountAll({ offset, limit });
+    return await database.Product.findAndCountAll({ offset, limit, where: filters });
   } catch (error) {
     throw error;
   }
@@ -41,11 +41,10 @@ export async function parseFromDocs() {
               title: productRow.title,
               price: +productRow.price,
               description: productRow.description,
+              image: productRow.image,
               CategoryId: category ? category.id : undefined,
               DkId: productRow.dk
             };
-
-            console.log(database.Product);
 
             createdProducts.push(await database.Product.create(newProduct));
           }

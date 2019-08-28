@@ -5,8 +5,11 @@ const responseUtils = new ResponseUtils();
 
 export async function productsList(req, res) {
   try {
-    const { limit, offset } = req.body;
-    return responseUtils.setSuccess(201, await ProductsService.list({ limit, offset })).send(res);
+    
+    const { limit, offset } = req.query;
+    const filters = JSON.parse(req.query.filters);
+    console.log(filters);
+    return responseUtils.setSuccess(200, await ProductsService.list({ limit, offset, filters })).send(res);
   } catch (error) {
     return responseUtils.setError(400, error.message).send(res);
   }
