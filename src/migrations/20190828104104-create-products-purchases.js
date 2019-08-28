@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable("ProductPurchase", {
+    return queryInterface.createTable("ProductsPurchases", {
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -16,17 +16,17 @@ module.exports = {
         type: Sequelize.INTEGER,
         primaryKey: true,
         references: {
-          model: 'Products', // name of Source model
-          key: 'id',
-        },
+          model: "Products", // name of Source model
+          key: "id"
+        }
       },
       PurchaseId: {
         allowNull: false,
         type: Sequelize.INTEGER,
         primaryKey: true,
         references: {
-          model: 'Purchases', // name of Source model
-          key: 'id',
+          model: "Purchases", // name of Source model
+          key: "id"
         }
       },
       count: {
@@ -36,7 +36,7 @@ module.exports = {
     });
   },
 
-  down: (queryInterface) => {
-    return queryInterface.dropTable("ProductPurchase");
+  down: queryInterface => {
+    return queryInterface.dropTable("ProductsPurchases");
   }
 };

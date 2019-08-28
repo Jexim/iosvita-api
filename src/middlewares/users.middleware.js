@@ -12,7 +12,7 @@ export async function validateUser(req, res, next) {
       return responseUtils.setError(400, err.message).send(res);
     } else {
       // add user id to request
-      req.body.userId = decoded.id;
+      req.body.UserId = decoded.id;
       next();
     }
   });

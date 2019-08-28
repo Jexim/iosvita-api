@@ -11,3 +11,15 @@ export async function purchasesList(req, res) {
     return responseUtils.setError(400, error.message).send(res);
   }
 }
+
+export async function createPurchase(req, res) {
+  let newPurchase = req.body;
+
+  try {
+    const createdPurchase = await PurchasesService.create(newPurchase);
+
+    return responseUtils.setSuccess(201, createdPurchase, "Purchase created").send(res);
+  } catch (error) {
+    return responseUtils.setError(400, error.message).send(res);
+  }
+}
