@@ -23,6 +23,8 @@ app.use("/parsers", parsersRoutes);
 app.use("/purchases", purchasesRoutes);
 
 app.get("*", (req, res) => res.status(200).send({ message: "Welcome to this API." }));
+
+console.log(process.env)
 database.sequelize
   .sync()
   .then(() => app.listen(port, () => console.log(`Server is running on PORT ${port}`)))
