@@ -24,7 +24,7 @@ app.use("/purchases", purchasesRoutes);
 
 app.get("*", (req, res) => res.status(200).send({ message: "Welcome to this API." }));
 
-console.log(process.env)
+console.log(process.env.NODE_ENV)
 database.sequelize
   .sync()
   .then(() => app.listen(port, () => console.log(`Server is running on PORT ${port}`)))
