@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon --exec babel-node ./src/index.js",
-    "start": "export NODE_ENV=test && nodemon --exec babel-node ./build/index.js",
+    "start": "export NODE_ENV=test && nodemon ./build/index.js",
     "build": "babel -d ./build ./src -s",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
