@@ -1,10 +1,4 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-var _default = {
+module.exports = {
   development: {
     username: "iosvitaapp",
     password: "asdqwe",
@@ -21,5 +15,3 @@ var _default = {
     dialect: "postgres"
   }
 };
-exports["default"] = _default;
-//# sourceMappingURL=database.js.map

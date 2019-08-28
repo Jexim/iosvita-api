@@ -1,10 +1,5 @@
-"use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-var _default = {
+module.exports = {
   development: {
     seecret: "iosvitaapp",
     googleSheetId: "1MAAk1n-Q_1W_-uSaGUVI4zIwdXeNNa5L2JCDWfGms6M"
@@ -18,5 +13,3 @@ var _default = {
     googleSheetId: "1MAAk1n-Q_1W_-uSaGUVI4zIwdXeNNa5L2JCDWfGms6M"
   }
 };
-exports["default"] = _default;
-//# sourceMappingURL=app.js.map

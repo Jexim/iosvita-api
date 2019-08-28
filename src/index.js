@@ -24,6 +24,7 @@ app.use("/purchases", purchasesRoutes);
 
 app.get("*", (req, res) => res.status(200).send({ message: "Welcome to this API." }));
 
+console.log(database.sequelize.options.url)
 console.log(database.sequelize.config)
 database.sequelize
   .sync()
