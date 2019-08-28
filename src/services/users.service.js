@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import database from "../models";
-import appConfig from "../../config/app";
+import appConfig from "../config/app";
 
 const saltRounds = 10;
 const seecret = appConfig[process.env.NODE_ENV || "development"].seecret;

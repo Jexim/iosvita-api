@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import ResponseUtils from "../utils/response.utils";
-import appConfig from "../../config/app";
+import appConfig from "../config/app";
 
 const responseUtils = new ResponseUtils();
 
