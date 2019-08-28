@@ -10,7 +10,8 @@ module.exports = {
   },
   test: {
     uri: "postgres://haryktmmcnxchg:32907fb8ad2ad5ea2e06152d93e0d122b1f1b3f97794db5993312f9156bb5a7e@ec2-46-137-187-23.eu-west-1.compute.amazonaws.com:5432/d3jnovf2l8f43c",
-    dialect: "postgres"
+    dialect: "postgres",
+    use_env_variable: "false"
   },
   production: {
     url: "postgres://haryktmmcnxchg:32907fb8ad2ad5ea2e06152d93e0d122b1f1b3f97794db5993312f9156bb5a7e@ec2-46-137-187-23.eu-west-1.compute.amazonaws.com:5432/d3jnovf2l8f43c",
