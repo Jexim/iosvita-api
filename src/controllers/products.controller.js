@@ -7,8 +7,8 @@ export async function productsList(req, res) {
   try {
     
     const { limit, offset } = req.query;
-    const filters = JSON.parse(req.query.filters);
-    
+    const filters = req.query.filters ? JSON.parse(req.query.filters) : null;
+
     return responseUtils.setSuccess(200, await ProductsService.list({ limit, offset, filters })).send(res);
   } catch (error) {
     return responseUtils.setError(400, error.message).send(res);

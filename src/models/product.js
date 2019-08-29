@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
     Product.belongsTo(models["Category"]);
     Product.belongsTo(models["Dk"]);
-    Product.belongsToMany(models["Purchase"], { through: "ProductsPurchases" });
+    Product.belongsToMany(models["Purchase"], { through: "ProductsPurchases", onDelete: "CASCADE" });
   };
   return Product;
 };

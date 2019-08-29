@@ -18,7 +18,8 @@ module.exports = {
         references: {
           model: "Products", // name of Source model
           key: "id"
-        }
+        },
+        onDelete: "CASCADE"
       },
       PurchaseId: {
         allowNull: false,
@@ -27,7 +28,8 @@ module.exports = {
         references: {
           model: "Purchases", // name of Source model
           key: "id"
-        }
+        },
+        onDelete: "CASCADE"
       },
       count: {
         type: Sequelize.INTEGER,

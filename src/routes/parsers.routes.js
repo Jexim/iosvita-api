@@ -4,6 +4,7 @@ import * as UsersMiddleware from "../middlewares/users.middleware";
 
 const router = Router();
 
+router.get("/", ParcersController.parseAllFromDocs);
 router.get("/products", UsersMiddleware.validateUser, ParcersController.parseProductsFromDocs);
 router.get("/categories", UsersMiddleware.validateUser, ParcersController.parseCategoriesFromDocs);
 router.get("/dks", UsersMiddleware.validateUser, ParcersController.parseDksFromDocs);
